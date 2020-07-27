@@ -75,6 +75,7 @@ const Auth = ({ callback }: IProps) => {
         <Column computer={4} mobile={14}>
           <Image
             centered
+            data-cy="logo"
             src={logo}
             size="small"
             alt="It's me!"
@@ -94,6 +95,7 @@ const Auth = ({ callback }: IProps) => {
                 type="email"
                 value={model.email}
                 onChange={(event, data) => setModel(prev => ({ ...prev, email: data?.value}))}
+                data-cy="input-email"
               />
             </Field>
 
@@ -109,6 +111,7 @@ const Auth = ({ callback }: IProps) => {
                   onClick={() => setToogleViewPass(!toogleViewPass)}
                 />}
                 onChange={(event, data) => setModel(prev => ({ ...prev, password: data?.value}))}
+                data-cy="input-password"
               />
             </Field>
 
@@ -118,6 +121,7 @@ const Auth = ({ callback }: IProps) => {
               loading={loading}
               disabled={!model.email || !model.password || loading}
               onClick={handlerAuth}
+              data-cy="btn-submit"
               >
                 Login
             </Button>

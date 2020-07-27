@@ -9,7 +9,7 @@ interface IProps {
   onRemove: Function;
 }
 const RowItem = ({ item, warning, onRemove }: IProps) => (
-  <Table.Row warning={warning}>
+  <Table.Row warning={warning} data-cy="tr-user-row">
     <Table.Cell>
       <CellPadded>{item.name}</CellPadded>
     </Table.Cell>

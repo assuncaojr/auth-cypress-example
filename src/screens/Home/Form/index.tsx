@@ -56,6 +56,7 @@ const FormItem = ({callback}: IProps) => {
                 icon="user"
                 placeholder="Nome do usuário"
                 value={model.name}
+                data-cy="input-user-name"
                 onChange={(event, data) => setModel(prev => ({ ...prev, name: data?.value}))}
               />
             </FormField>
@@ -69,6 +70,7 @@ const FormItem = ({callback}: IProps) => {
                 type="email"
                 value={model.email}
                 onChange={(event, data) => setModel(prev => ({ ...prev, email: data?.value}))}
+                data-cy="input-user-email"
               />
             </FormField>
 
@@ -80,6 +82,7 @@ const FormItem = ({callback}: IProps) => {
               loading={loading}
               disabled={!model.name || !model.email || loading}
               onClick={handlerRegister}
+              data-cy="btn-user-submit"
             >
               <Icon name="send" />
               Registrar
